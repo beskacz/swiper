@@ -14,7 +14,13 @@ export default {
       resize: {
         observer: null,
         createObserver() {
-          if (!swiper || swiper.destroyed || !swiper.initialized) return;
+          if (
+            !swiper ||
+            swiper.destroyed ||
+            !swiper.initialized ||
+            swiper.touchEventsData.isTouched
+          )
+            return;
           swiper.resize.observer = new ResizeObserver((entries) => {
             const { width, height } = swiper;
             let newWidth = width;

@@ -1,5 +1,5 @@
 /**
- * Swiper React 6.8.5
+ * Swiper React 6.8.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *

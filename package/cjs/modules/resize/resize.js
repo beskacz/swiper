@@ -20,7 +20,7 @@ var _default = {
       resize: {
         observer: null,
         createObserver: function createObserver() {
-          if (!swiper || swiper.destroyed || !swiper.initialized) return;
+          if (!swiper || swiper.destroyed || !swiper.initialized || swiper.touchEventsData.isTouched) return;
           swiper.resize.observer = new ResizeObserver(function (entries) {
             var width = swiper.width,
                 height = swiper.height;

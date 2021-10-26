@@ -1,5 +1,5 @@
 /**
- * Swiper 6.8.5
+ * Swiper 6.8.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1508,7 +1508,7 @@ var Resize = {
       resize: {
         observer: null,
         createObserver: function createObserver() {
-          if (!swiper || swiper.destroyed || !swiper.initialized) return;
+          if (!swiper || swiper.destroyed || !swiper.initialized || swiper.touchEventsData.isTouched) return;
           swiper.resize.observer = new ResizeObserver(function (entries) {
             var width = swiper.width,
                 height = swiper.height;
