@@ -1,9 +1,13 @@
 export default function onResize() {
   const swiper = this;
 
-  const { params, el } = swiper;
+  const {
+    params,
+    el,
+    touchEventsData: { isTouched },
+  } = swiper;
 
-  if (el && el.offsetWidth === 0) return;
+  if ((el && el.offsetWidth === 0) || isTouched) return;
 
   // Breakpoints
   if (params.breakpoints) {
