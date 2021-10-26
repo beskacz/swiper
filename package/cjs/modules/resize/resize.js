@@ -23,7 +23,9 @@ var _default = {
           if (!swiper || swiper.destroyed || !swiper.initialized || swiper.touchEventsData.isTouched) return;
           swiper.resize.observer = new ResizeObserver(function (entries) {
             var width = swiper.width,
-                height = swiper.height;
+                height = swiper.height,
+                touchEventsData = swiper.touchEventsData;
+            if (touchEventsData.isTouched) return;
             var newWidth = width;
             var newHeight = height;
             entries.forEach(function (_ref) {

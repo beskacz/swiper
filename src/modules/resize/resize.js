@@ -22,7 +22,8 @@ export default {
           )
             return;
           swiper.resize.observer = new ResizeObserver((entries) => {
-            const { width, height } = swiper;
+            const { width, height, touchEventsData } = swiper;
+            if (touchEventsData.isTouched) return;
             let newWidth = width;
             let newHeight = height;
             entries.forEach(({ contentBoxSize, contentRect, target }) => {
